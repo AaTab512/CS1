@@ -22,31 +22,6 @@ void bubbleSort(int arr[], int n)
       printf("Number of swaps needed for %d: %d\n", arr[i], swaps[i]);
 }
 
-void SelectionSort(int arr[], int n) 
-{ 
-    int i, j, min, swaps[n], temp; 
-  
-    // One by one move boundary of unsorted subarray 
-    for (i = 0; i < n-1; i++) 
-    { 
-        // Find the minimum element in unsorted array 
-        min= i; 
-        for (j = i+1; j < n; j++) 
-          if (arr[j] < arr[min]) 
-            min= j; 
-  
-        // Swap the found minimum element with the first element 
-           if(min != i) 
-            {
-              temp = arr[j];
-              arr[j] = arr[j+1];
-              arr[j+1] = temp;
-              swaps[j]++;
-           }
-    } 
-    for (i = 0; i < n; i++)
-      printf("Number of swaps needed for %d: %d\n", arr[i], swaps[i]);
-} 
 
 int main()
 {
@@ -59,6 +34,5 @@ int main()
    bubbleSort(arr, n);
    printf("Array 2: \n");
    bubbleSort (arr2, m);
-   SelectionSort(arr, n);
    return 0;
 }
